@@ -7,6 +7,7 @@ import foodRouter from "./routes/foodRoute.js"
 
 
 
+
 //app configuration
 const app = express();
 const port = 4000
@@ -20,6 +21,7 @@ connectDB();
 
 //api endpoints
 app.use("/api/food",foodRouter);
+app.use("/images", express.static("uploads")); //serve static files from uploads directory
 
 app.get("/", (req, res) => {
     res.send("API Working");
